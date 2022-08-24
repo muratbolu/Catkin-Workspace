@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/muratbolu/catkin_ws/devel/.private/moveit_exercises/setup.sh

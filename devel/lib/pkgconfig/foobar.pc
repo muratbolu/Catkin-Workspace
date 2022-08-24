@@ -1,0 +1,1 @@
+/home/muratbolu/catkin_ws/devel/.private/foobar/lib/pkgconfig/foobar.pc

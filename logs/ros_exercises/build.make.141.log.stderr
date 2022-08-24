@@ -1,0 +1,63 @@
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:3:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+    3 | std::[01;31m[Kstring[m[K print_array::to_string(const std::vector<T>  &vec) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:3:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+    3 | std::[01;31m[Kstring[m[K print_array::to_string(const std::vector<T>  &vec) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+  +++ |+[32m[K#include <string>[m[K
+    1 | 
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+  +++ |+[32m[K#include <string>[m[K
+    1 | 
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:17:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   17 | std::[01;31m[Kstring[m[K print_array::to_string(const ros_exercises::find_min_array::Request  &req) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:17:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   17 | std::[01;31m[Kstring[m[K print_array::to_string(const ros_exercises::find_min_array::Request  &req) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:17:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   17 | [01;36m[Kstd[m[K::string print_array::to_string(const ros_exercises::find_min_array::Request  &req) {
+      | [01;36m[K^~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:17:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   17 | [01;36m[Kstd[m[K::string print_array::to_string(const ros_exercises::find_min_array::Request  &req) {
+      | [01;36m[K^~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:23:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   23 | std::[01;31m[Kstring[m[K print_array::to_string(const ros_exercises::compute_statistics::Request  &req) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:23:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   23 | [01;36m[Kstd[m[K::string print_array::to_string(const ros_exercises::compute_statistics::Request  &req) {
+      | [01;36m[K^~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:23:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   23 | std::[01;31m[Kstring[m[K print_array::to_string(const ros_exercises::compute_statistics::Request  &req) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:29:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   29 | std::[01;31m[Kstring[m[K print_array::to_string(const ros_exercises::primes_list  &req) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:23:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   23 | [01;36m[Kstd[m[K::string print_array::to_string(const ros_exercises::compute_statistics::Request  &req) {
+      | [01;36m[K^~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:29:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   29 | [01;36m[Kstd[m[K::string print_array::to_string(const ros_exercises::primes_list  &req) {
+      | [01;36m[K^~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:29:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   29 | std::[01;31m[Kstring[m[K print_array::to_string(const ros_exercises::primes_list  &req) {
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:29:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   29 | [01;36m[Kstd[m[K::string print_array::to_string(const ros_exercises::primes_list  &req) {
+      | [01;36m[K^~~[m[K
+make[2]: *** [CMakeFiles/find_min_array_server.dir/build.make:76: CMakeFiles/find_min_array_server.dir/src/print_array.cpp.o] Error 1
+make[2]: *** [CMakeFiles/statistics_server.dir/build.make:76: CMakeFiles/statistics_server.dir/src/print_array.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:237: CMakeFiles/find_min_array_server.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:183: CMakeFiles/statistics_server.dir/all] Error 2
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::find_min_arrayRequest_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x720): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::find_min_arrayRequest_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x1b0): first defined here
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::compute_statisticsRequest_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x770): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::compute_statisticsRequest_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x200): first defined here
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::primes_list_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x7c0): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::primes_list_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x250): first defined here
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:116: /home/muratbolu/catkin_ws/devel/.private/ros_exercises/lib/ros_exercises/prime_publisher] Error 1
+make[1]: *** [CMakeFiles/Makefile2:529: CMakeFiles/prime_publisher.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

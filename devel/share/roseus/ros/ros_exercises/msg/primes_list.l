@@ -1,0 +1,1 @@
+/home/muratbolu/catkin_ws/devel/.private/ros_exercises/share/roseus/ros/ros_exercises/msg/primes_list.l

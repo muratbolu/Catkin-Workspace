@@ -1,0 +1,8 @@
+prefix=/home/muratbolu/catkin_ws/install
+
+Name: gazebo_plugin_exercises
+Description: Description of gazebo_plugin_exercises
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs geometry_msgs pluginlib

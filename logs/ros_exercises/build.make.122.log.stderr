@@ -1,0 +1,32 @@
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime.cpp:[m[K In constructor ‘[01m[Kprime_application::prime_application()[m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime.cpp:8:34:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvoid prime_application::calculator_function()[m[K’
+    8 |  calculator_thread = std::thread([01;31m[Kcalculator_function[m[K);
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/prime.h:60:14:[m[K [01;36m[Knote: [m[Kdeclared here
+   60 |         void [01;36m[Kcalculator_function[m[K();
+      |              [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime.cpp:9:31:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvoid prime_application::printer_function()[m[K’
+    9 |  printer_thread = std::thread([01;31m[Kprinter_function[m[K);
+      |                               [01;31m[K^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/prime.h:61:14:[m[K [01;36m[Knote: [m[Kdeclared here
+   61 |         void [01;36m[Kprinter_function[m[K();
+      |              [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime.cpp:10:33:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvoid prime_application::publisher_function()[m[K’
+   10 |  publisher_thread = std::thread([01;31m[Kpublisher_function[m[K);
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/prime.h:62:14:[m[K [01;36m[Knote: [m[Kdeclared here
+   62 |         void [01;36m[Kpublisher_function[m[K();
+      |              [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/prime.dir/build.make:63: CMakeFiles/prime.dir/src/prime.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:958: CMakeFiles/prime.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o: in function `main':
+prime_publisher.cpp:(.text.startup+0x89): undefined reference to `prime_application::prime_application()'
+/usr/bin/ld: prime_publisher.cpp:(.text.startup+0x91): undefined reference to `prime_application::~prime_application()'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:101: /home/muratbolu/catkin_ws/devel/.private/ros_exercises/lib/ros_exercises/prime_publisher] Error 1
+make[1]: *** [CMakeFiles/Makefile2:531: CMakeFiles/prime_publisher.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

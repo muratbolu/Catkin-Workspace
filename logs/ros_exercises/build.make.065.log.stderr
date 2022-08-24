@@ -1,0 +1,12 @@
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:3[m[K:
+/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h: In instantiation of ‘[01m[Kstd::string print_array::to_string(T&) [with T = const ros_exercises::primes_list_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:27:4:[m[K   required from here
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:10:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct ros_exercises::primes_list_<std::allocator<void> >[m[K’ has no member named ‘[01m[Karray[m[K’
+   10 |   size_t size = [01;31m[Kreq.array[m[K.size();
+      |                 [01;31m[K~~~~^~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:13:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct ros_exercises::primes_list_<std::allocator<void> >[m[K’ has no member named ‘[01m[Karray[m[K’
+   13 |    output << std::to_string([01;31m[Kreq.array[m[K[i]);
+      |                             [01;31m[K~~~~^~~~~[m[K
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:63: CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:515: CMakeFiles/prime_publisher.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

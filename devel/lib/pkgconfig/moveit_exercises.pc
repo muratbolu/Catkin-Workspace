@@ -1,0 +1,1 @@
+/home/muratbolu/catkin_ws/devel/.private/moveit_exercises/lib/pkgconfig/moveit_exercises.pc

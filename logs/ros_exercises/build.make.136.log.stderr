@@ -1,0 +1,11 @@
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::find_min_arrayRequest_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x720): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::find_min_arrayRequest_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x1b0): first defined here
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::compute_statisticsRequest_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x770): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::compute_statisticsRequest_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x200): first defined here
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::primes_list_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x7c0): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::primes_list_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x250): first defined here
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:116: /home/muratbolu/catkin_ws/devel/.private/ros_exercises/lib/ros_exercises/prime_publisher] Error 1
+make[1]: *** [CMakeFiles/Makefile2:529: CMakeFiles/prime_publisher.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

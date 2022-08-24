@@ -1,0 +1,11 @@
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:28:68:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Klong unsigned int prime_namespace::prime_class::next_prime()[m[K’
+   28 |  std::thread prime_thread(primes_lst.array.push_back, [01;31m[Kprime_object.next_prime[m[K);
+      |                                                       [01;31m[K~~~~~~~~~~~~~^~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:4[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/prime.h:16:31:[m[K [01;36m[Knote: [m[Kdeclared here
+   16 |             long unsigned int [01;36m[Knext_prime[m[K() {
+      |                               [01;36m[K^~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:63: CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:515: CMakeFiles/prime_publisher.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

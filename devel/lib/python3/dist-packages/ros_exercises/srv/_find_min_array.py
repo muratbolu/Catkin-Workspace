@@ -1,0 +1,1 @@
+/home/muratbolu/catkin_ws/devel/.private/ros_exercises/lib/python3/dist-packages/ros_exercises/srv/_find_min_array.py

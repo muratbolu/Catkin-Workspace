@@ -1,0 +1,31 @@
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:3[m[K:
+/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h: In instantiation of ‘[01m[Kstd::string print_array::to_string(T&) [with T = std::vector<long unsigned int, std::allocator<long unsigned int> >; std::string = std::__cxx11::basic_string<char>][m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:15:3:[m[K   required from here
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:10:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::vector<long unsigned int, std::allocator<long unsigned int> >[m[K’ has no member named ‘[01m[Karray[m[K’
+   10 |   size_t size = [01;31m[Kreq.array[m[K.size();
+      |                 [01;31m[K~~~~^~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:13:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::vector<long unsigned int, std::allocator<long unsigned int> >[m[K’ has no member named ‘[01m[Karray[m[K’
+   13 |    output << std::to_string([01;31m[Kreq.array[m[K[i]);
+      |                             [01;31m[K~~~~^~~~~[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/serialization.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/publisher.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/node_handle.h:32[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:1[m[K:
+/opt/ros/noetic/include/ros/message_traits.h: In instantiation of ‘[01m[Kstatic const char* ros::message_traits::MD5Sum<M>::value(const M&) [with M = std::vector<long unsigned int, std::allocator<long unsigned int> >][m[K’:
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:254:102:[m[K   required from ‘[01m[Kconst char* ros::message_traits::md5sum(const M&) [with M = std::vector<long unsigned int, std::allocator<long unsigned int> >][m[K’
+[01m[K/opt/ros/noetic/include/ros/publisher.h:117:38:[m[K   required from ‘[01m[Kvoid ros::Publisher::publish(const M&) const [with M = std::vector<long unsigned int, std::allocator<long unsigned int> >][m[K’
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:16:35:[m[K   required from here
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:125:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class std::vector<long unsigned int, std::allocator<long unsigned int> >[m[K’ has no member named ‘[01m[K__getMD5Sum[m[K’
+  125 |     return [01;31m[Km.__getMD5Sum[m[K().c_str();
+      |            [01;31m[K~~^~~~~~~~~~~[m[K
+/opt/ros/noetic/include/ros/message_traits.h: In instantiation of ‘[01m[Kstatic const char* ros::message_traits::DataType<M>::value(const M&) [with M = std::vector<long unsigned int, std::allocator<long unsigned int> >][m[K’:
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:263:104:[m[K   required from ‘[01m[Kconst char* ros::message_traits::datatype(const M&) [with M = std::vector<long unsigned int, std::allocator<long unsigned int> >][m[K’
+[01m[K/opt/ros/noetic/include/ros/publisher.h:119:11:[m[K   required from ‘[01m[Kvoid ros::Publisher::publish(const M&) const [with M = std::vector<long unsigned int, std::allocator<long unsigned int> >][m[K’
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:16:35:[m[K   required from here
+[01m[K/opt/ros/noetic/include/ros/message_traits.h:142:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class std::vector<long unsigned int, std::allocator<long unsigned int> >[m[K’ has no member named ‘[01m[K__getDataType[m[K’
+  142 |     return [01;31m[Km.__getDataType[m[K().c_str();
+      |            [01;31m[K~~^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:63: CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:515: CMakeFiles/prime_publisher.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

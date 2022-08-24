@@ -1,0 +1,20 @@
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:12:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kprime[m[K’ has not been declared
+   12 |                          [01;31m[Kprime[m[K::primes &prime_object) {
+      |                          [01;31m[K^~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:12:40:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K&[m[K’ token
+   12 |                          prime::primes [01;31m[K&[m[Kprime_object) {
+      |                                        [01;31m[K^[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:[m[K In function ‘[01m[Kvoid calculator_function(ros_exercises::primes_list&, int)[m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:15:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kprime_object[m[K’ was not declared in this scope
+   15 |    primes_lst.array.push_back([01;31m[Kprime_object[m[K.next_prime());
+      |                               [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:44:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kprime[m[K’ has not been declared
+   44 |  [01;31m[Kprime[m[K::primes prime_object;
+      |  [01;31m[K^~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:45:79:[m[K [01;31m[Kerror: [m[K‘[01m[Kprime_object[m[K’ was not declared in this scope
+   45 |  std::thread prime_thread(calculator_function, std::ref(primes_lst), std::ref([01;31m[Kprime_object[m[K));
+      |                                                                               [01;31m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:63: CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:515: CMakeFiles/prime_publisher.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

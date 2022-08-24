@@ -1,0 +1,1 @@
+/home/muratbolu/catkin_ws/devel/.private/gazebo_plugin_exercises/share/gazebo_plugin_exercises/cmake/gazebo_plugin_exercisesConfig-version.cmake

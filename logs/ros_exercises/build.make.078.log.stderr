@@ -1,0 +1,31 @@
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:[m[K In function ‘[01m[Kvoid printer_function(ros::Publisher&, ros::Rate&, const primes_list&)[m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:27:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kprint_data[m[K’ has not been declared
+   27 |    ROS_INFO("%s", ([01;31m[Kprint_data[m[K::to_string(primes_lst)).c_str());
+      |                    [01;31m[K^~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:351:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+  351 |     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+      |                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:390:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+  390 |       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:575:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+  575 | #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+      |                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+  110 | #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+      |                       [01;36m[K^~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/prime_publisher.cpp:27:4:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+   27 |    [01;36m[KROS_INFO[m[K("%s", (print_data::to_string(primes_lst)).c_str());
+      |    [01;36m[K^~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/statistics_client.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/statistics_client.cpp:14:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kros_exercises::compute_statistics::Request[m[K’ {aka ‘[01m[Kstruct ros_exercises::compute_statisticsRequest_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kdata[m[K’
+   14 |         for (int i = 0; i < input.size(); i++) srv.request.[01;31m[Kdata[m[K.push_back(input[i]);
+      |                                                            [01;31m[K^~~~[m[K
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:63: CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:529: CMakeFiles/prime_publisher.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/statistics_client.dir/build.make:63: CMakeFiles/statistics_client.dir/src/statistics_client.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:556: CMakeFiles/statistics_client.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

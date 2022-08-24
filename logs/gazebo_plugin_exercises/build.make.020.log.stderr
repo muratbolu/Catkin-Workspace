@@ -1,0 +1,108 @@
+In file included from [01m[K/usr/include/boost/bind.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/detail/thread.hpp:33[m[K,
+                 from [01m[K/usr/include/boost/thread/thread_only.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/thread.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/thread.hpp:13[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Console.hh:27[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:14[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo_core.hh:19[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo.hh:20[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp:4[m[K:
+/usr/include/boost/bind/bind.hpp: In instantiation of ‘[01m[Kvoid boost::_bi::list2<A1, A2>::operator()(boost::_bi::type<void>, F&, A&, int) [with F = boost::_mfi::mf1<void, gazebo::MyVehiclePlugin, const geometry_msgs::Twist_<std::allocator<void> >&>; A = boost::_bi::rrlist1<const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&>; A1 = boost::_bi::value<gazebo::MyVehiclePlugin*>; A2 = boost::arg<1>][m[K’:
+[01m[K/usr/include/boost/bind/bind.hpp:1306:50:[m[K   required from ‘[01m[Kboost::_bi::bind_t<R, F, L>::result_type boost::_bi::bind_t<R, F, L>::operator()(A1&&) [with A1 = const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&; R = void; F = boost::_mfi::mf1<void, gazebo::MyVehiclePlugin, const geometry_msgs::Twist_<std::allocator<void> >&>; L = boost::_bi::list2<boost::_bi::value<gazebo::MyVehiclePlugin*>, boost::arg<1> >; boost::_bi::bind_t<R, F, L>::result_type = void][m[K’
+[01m[K/usr/include/boost/function/function_template.hpp:158:11:[m[K   required from ‘[01m[Kstatic void boost::detail::function::void_function_obj_invoker1<FunctionObj, R, T0>::invoke(boost::detail::function::function_buffer&, T0) [with FunctionObj = boost::_bi::bind_t<void, boost::_mfi::mf1<void, gazebo::MyVehiclePlugin, const geometry_msgs::Twist_<std::allocator<void> >&>, boost::_bi::list2<boost::_bi::value<gazebo::MyVehiclePlugin*>, boost::arg<1> > >; R = void; T0 = const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&][m[K’
+[01m[K/usr/include/boost/function/function_template.hpp:931:38:[m[K   required from ‘[01m[Kvoid boost::function1<R, T1>::assign_to(Functor) [with Functor = boost::_bi::bind_t<void, boost::_mfi::mf1<void, gazebo::MyVehiclePlugin, const geometry_msgs::Twist_<std::allocator<void> >&>, boost::_bi::list2<boost::_bi::value<gazebo::MyVehiclePlugin*>, boost::arg<1> > >; R = void; T0 = const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&][m[K’
+[01m[K/usr/include/boost/function/function_template.hpp:720:7:[m[K   required from ‘[01m[Kboost::function1<R, T1>::function1(Functor, typename boost::enable_if_<(! boost::is_integral<T>::value), int>::type) [with Functor = boost::_bi::bind_t<void, boost::_mfi::mf1<void, gazebo::MyVehiclePlugin, const geometry_msgs::Twist_<std::allocator<void> >&>, boost::_bi::list2<boost::_bi::value<gazebo::MyVehiclePlugin*>, boost::arg<1> > >; R = void; T0 = const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&; typename boost::enable_if_<(! boost::is_integral<T>::value), int>::type = int][m[K’
+[01m[K/usr/include/boost/function/function_template.hpp:1068:16:[m[K   required from ‘[01m[Kboost::function<R(T0)>::function(Functor, typename boost::enable_if_<(! boost::is_integral<T>::value), int>::type) [with Functor = boost::_bi::bind_t<void, boost::_mfi::mf1<void, gazebo::MyVehiclePlugin, const geometry_msgs::Twist_<std::allocator<void> >&>, boost::_bi::list2<boost::_bi::value<gazebo::MyVehiclePlugin*>, boost::arg<1> > >; R = void; T0 = const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&; typename boost::enable_if_<(! boost::is_integral<T>::value), int>::type = int][m[K’
+[01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp:73:71:[m[K   required from here
+[01m[K/usr/include/boost/bind/bind.hpp:319:35:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(boost::_mfi::mf1<void, gazebo::MyVehiclePlugin, const geometry_msgs::Twist_<std::allocator<void> >&>) (gazebo::MyVehiclePlugin*&, const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&)[m[K’
+  319 |         [01;31m[Kunwrapper<F>::unwrap(f, 0)(a[base_type::a1_], a[base_type::a2_])[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/bind/mem_fn.hpp:215[m[K,
+                 from [01m[K/usr/include/boost/mem_fn.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/bind/bind.hpp:26[m[K,
+                 from [01m[K/usr/include/boost/bind.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/detail/thread.hpp:33[m[K,
+                 from [01m[K/usr/include/boost/thread/thread_only.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/thread.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/thread.hpp:13[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Console.hh:27[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:14[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo_core.hh:19[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo.hh:20[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp:4[m[K:
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:163:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KR boost::_mfi::mf1<R, T, A1>::operator()(T*, A1) const [with R = void; T = gazebo::MyVehiclePlugin; A1 = const geometry_msgs::Twist_<std::allocator<void> >&][m[K’
+  163 |     R [01;36m[Koperator[m[K()(T * p, A1 a1) const
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:163:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kconst boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >[m[K’ to ‘[01m[Kconst geometry_msgs::Twist_<std::allocator<void> >&[m[K’
+  163 |     R operator()(T * p, [01;36m[KA1 a1[m[K) const
+      |                         [01;36m[K~~~^~[m[K
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:168:25:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class U> R boost::_mfi::mf1<R, T, A1>::operator()(U&, A1) const [with U = U; R = void; T = gazebo::MyVehiclePlugin; A1 = const geometry_msgs::Twist_<std::allocator<void> >&][m[K’
+  168 |     template<class U> R [01;36m[Koperator[m[K()(U & u, A1 a1) const
+      |                         [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:168:25:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/usr/include/boost/bind.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/detail/thread.hpp:33[m[K,
+                 from [01m[K/usr/include/boost/thread/thread_only.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/thread.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/thread.hpp:13[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Console.hh:27[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:14[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo_core.hh:19[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo.hh:20[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp:4[m[K:
+[01m[K/usr/include/boost/bind/bind.hpp:319:35:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[K(& a)->boost::_bi::rrlist1<const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&>::operator[](boost::_bi::storage2<boost::_bi::value<gazebo::MyVehiclePlugin*>, boost::arg<1> >::a2_)[m[K’ (type ‘[01m[Kconst boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >[m[K’) to type ‘[01m[Kconst geometry_msgs::Twist_<std::allocator<void> >&[m[K’
+  319 |         [01;36m[Kunwrapper<F>::unwrap(f, 0)(a[base_type::a1_], a[base_type::a2_])[m[K;
+      |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/bind/mem_fn.hpp:215[m[K,
+                 from [01m[K/usr/include/boost/mem_fn.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/bind/bind.hpp:26[m[K,
+                 from [01m[K/usr/include/boost/bind.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/detail/thread.hpp:33[m[K,
+                 from [01m[K/usr/include/boost/thread/thread_only.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/thread.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/thread.hpp:13[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Console.hh:27[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:14[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo_core.hh:19[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo.hh:20[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp:4[m[K:
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:176:25:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class U> R boost::_mfi::mf1<R, T, A1>::operator()(const U&, A1) const [with U = U; R = void; T = gazebo::MyVehiclePlugin; A1 = const geometry_msgs::Twist_<std::allocator<void> >&][m[K’
+  176 |     template<class U> R [01;36m[Koperator[m[K()(U const & u, A1 a1) const
+      |                         [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:176:25:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/usr/include/boost/bind.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/detail/thread.hpp:33[m[K,
+                 from [01m[K/usr/include/boost/thread/thread_only.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/thread.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/thread.hpp:13[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Console.hh:27[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:14[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo_core.hh:19[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo.hh:20[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp:4[m[K:
+[01m[K/usr/include/boost/bind/bind.hpp:319:35:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[K(& a)->boost::_bi::rrlist1<const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >&>::operator[](boost::_bi::storage2<boost::_bi::value<gazebo::MyVehiclePlugin*>, boost::arg<1> >::a2_)[m[K’ (type ‘[01m[Kconst boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >[m[K’) to type ‘[01m[Kconst geometry_msgs::Twist_<std::allocator<void> >&[m[K’
+  319 |         [01;36m[Kunwrapper<F>::unwrap(f, 0)(a[base_type::a1_], a[base_type::a2_])[m[K;
+      |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/bind/mem_fn.hpp:215[m[K,
+                 from [01m[K/usr/include/boost/mem_fn.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/bind/bind.hpp:26[m[K,
+                 from [01m[K/usr/include/boost/bind.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/detail/thread.hpp:33[m[K,
+                 from [01m[K/usr/include/boost/thread/thread_only.hpp:22[m[K,
+                 from [01m[K/usr/include/boost/thread/thread.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/thread.hpp:13[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/Console.hh:27[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/common/common.hh:14[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo_core.hh:19[m[K,
+                 from [01m[K/usr/include/gazebo-11/gazebo/gazebo.hh:20[m[K,
+                 from [01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp:4[m[K:
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:184:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KR boost::_mfi::mf1<R, T, A1>::operator()(T&, A1) const [with R = void; T = gazebo::MyVehiclePlugin; A1 = const geometry_msgs::Twist_<std::allocator<void> >&][m[K’
+  184 |     R [01;36m[Koperator[m[K()(T & t, A1 a1) const
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/boost/bind/mem_fn_template.hpp:184:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kgazebo::MyVehiclePlugin*[m[K’ to ‘[01m[Kgazebo::MyVehiclePlugin&[m[K’
+  184 |     R operator()([01;36m[KT & t[m[K, A1 a1) const
+      |                  [01;36m[K~~~~^[m[K
+make[2]: *** [CMakeFiles/my_vehicle_plugin.dir/build.make:63: CMakeFiles/my_vehicle_plugin.dir/src/my_vehicle_plugin.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:837: CMakeFiles/my_vehicle_plugin.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

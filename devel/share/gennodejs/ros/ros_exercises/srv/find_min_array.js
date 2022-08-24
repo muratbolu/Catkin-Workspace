@@ -1,0 +1,1 @@
+/home/muratbolu/catkin_ws/devel/.private/ros_exercises/share/gennodejs/ros/ros_exercises/srv/find_min_array.js

@@ -1,0 +1,71 @@
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::find_min_arrayRequest_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x720): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::find_min_arrayRequest_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x1b0): first defined here
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::compute_statisticsRequest_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x770): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::compute_statisticsRequest_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x200): first defined here
+/usr/bin/ld: CMakeFiles/prime_publisher.dir/src/prime.cpp.o: in function `print_array::to_string[abi:cxx11](ros_exercises::primes_list_<std::allocator<void> > const&)':
+prime.cpp:(.text+0x7c0): multiple definition of `print_array::to_string[abi:cxx11](ros_exercises::primes_list_<std::allocator<void> > const&)'; CMakeFiles/prime_publisher.dir/src/prime_publisher.cpp.o:prime_publisher.cpp:(.text+0x250): first defined here
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/prime_publisher.dir/build.make:116: /home/muratbolu/catkin_ws/devel/.private/ros_exercises/lib/ros_exercises/prime_publisher] Error 1
+make[1]: *** [CMakeFiles/Makefile2:529: CMakeFiles/prime_publisher.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:4:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Ktemplate<class T> std::string print_array::to_string(const std::vector<T>&)[m[K’
+    4 | std::string [01;31m[Kprint_array[m[K::to_string(const std::vector<T>  &vec) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:11:14:[m[K [01;36m[Knote: [m[K‘[01m[Ktemplate<class T> std::string print_array::to_string(const std::vector<T>&)[m[K’ previously declared here
+   11 |  std::string [01;36m[Kto_string[m[K(const std::vector<T>  &vec) {
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:18:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’
+   18 | std::string [01;31m[Kprint_array[m[K::to_string(const ros_exercises::find_min_array::Request  &req) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:25:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’ previously defined here
+   25 |  std::string [01;36m[Kto_string[m[K(const ros_exercises::find_min_array::Request  &req) {
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:24:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’
+   24 | std::string [01;31m[Kprint_array[m[K::to_string(const ros_exercises::compute_statistics::Request  &req) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:31:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’ previously defined here
+   31 |  std::string [01;36m[Kto_string[m[K(const ros_exercises::compute_statistics::Request  &req) {
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:30:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kstd::string print_array::to_string(const primes_list&)[m[K’
+   30 | std::string [01;31m[Kprint_array[m[K::to_string(const ros_exercises::primes_list  &req) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:37:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string print_array::to_string(const primes_list&)[m[K’ previously defined here
+   37 |  std::string [01;36m[Kto_string[m[K(const ros_exercises::primes_list  &req) {
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:4:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Ktemplate<class T> std::string print_array::to_string(const std::vector<T>&)[m[K’
+    4 | std::string [01;31m[Kprint_array[m[K::to_string(const std::vector<T>  &vec) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:11:14:[m[K [01;36m[Knote: [m[K‘[01m[Ktemplate<class T> std::string print_array::to_string(const std::vector<T>&)[m[K’ previously declared here
+   11 |  std::string [01;36m[Kto_string[m[K(const std::vector<T>  &vec) {
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:18:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’
+   18 | std::string [01;31m[Kprint_array[m[K::to_string(const ros_exercises::find_min_array::Request  &req) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:25:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’ previously defined here
+   25 |  std::string [01;36m[Kto_string[m[K(const ros_exercises::find_min_array::Request  &req) {
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:24:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’
+   24 | std::string [01;31m[Kprint_array[m[K::to_string(const ros_exercises::compute_statistics::Request  &req) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:31:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string print_array::to_string(const Request&)[m[K’ previously defined here
+   31 |  std::string [01;36m[Kto_string[m[K(const ros_exercises::compute_statistics::Request  &req) {
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:30:13:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kstd::string print_array::to_string(const primes_list&)[m[K’
+   30 | std::string [01;31m[Kprint_array[m[K::to_string(const ros_exercises::primes_list  &req) {
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/print_array.cpp:1[m[K:
+[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/include/ros_exercises/print_array.h:37:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string print_array::to_string(const primes_list&)[m[K’ previously defined here
+   37 |  std::string [01;36m[Kto_string[m[K(const ros_exercises::primes_list  &req) {
+      |              [01;36m[K^~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/find_min_array_server.dir/build.make:76: CMakeFiles/find_min_array_server.dir/src/print_array.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:237: CMakeFiles/find_min_array_server.dir/all] Error 2
+make[2]: *** [CMakeFiles/statistics_server.dir/build.make:76: CMakeFiles/statistics_server.dir/src/print_array.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:183: CMakeFiles/statistics_server.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

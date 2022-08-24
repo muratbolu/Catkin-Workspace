@@ -1,0 +1,5 @@
+[35m[1mScanning dependencies of target robot_model_and_robot_state_exercise[0m
+[ 50%] Built target move_group_interface_exercise
+[ 75%] [32mBuilding CXX object CMakeFiles/robot_model_and_robot_state_exercise.dir/src/robot_model_and_robot_state_exercise.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/muratbolu/catkin_ws/devel/.private/moveit_exercises/lib/moveit_exercises/robot_model_and_robot_state_exercise[0m
+[100%] Built target robot_model_and_robot_state_exercise

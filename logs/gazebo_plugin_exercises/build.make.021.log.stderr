@@ -1,0 +1,3 @@
+make[2]: *** No rule to make target '/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/my_vehicle_plugin.cpp', needed by 'CMakeFiles/my_vehicle_plugin.dir/src/my_vehicle_plugin.cpp.o'.  Stop.
+make[1]: *** [CMakeFiles/Makefile2:837: CMakeFiles/my_vehicle_plugin.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

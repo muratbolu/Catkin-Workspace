@@ -1,0 +1,12 @@
+[01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/wheelbarrow_plugin.cpp:[m[K In member function ‘[01m[Kvoid gazebo::WheelbarrowPlugin::OnRosMsg(const ConstPtr&)[m[K’:
+[01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/wheelbarrow_plugin.cpp:88:31:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kconst ConstPtr[m[K’ {aka ‘[01m[Kconst boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >[m[K’} to ‘[01m[Kconst Twist&[m[K’ {aka ‘[01m[Kconst geometry_msgs::Twist_<std::allocator<void> >&[m[K’}
+   88 |             this->SetVelocity([01;31m[K_msg[m[K);
+      |                               [01;31m[K^~~~[m[K
+      |                               [01;31m[K|[m[K
+      |                               [01;31m[Kconst ConstPtr {aka const boost::shared_ptr<const geometry_msgs::Twist_<std::allocator<void> > >}[m[K
+[01m[K/home/muratbolu/catkin_ws/src/gazebo_plugin_exercises/src/wheelbarrow_plugin.cpp:78:54:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid gazebo::WheelbarrowPlugin::SetVelocity(const Twist&)[m[K’
+   78 |         void SetVelocity([01;36m[Kconst geometry_msgs::Twist &_vel[m[K) {
+      |                          [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+make[2]: *** [CMakeFiles/wheelbarrow_plugin.dir/build.make:63: CMakeFiles/wheelbarrow_plugin.dir/src/wheelbarrow_plugin.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:756: CMakeFiles/wheelbarrow_plugin.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

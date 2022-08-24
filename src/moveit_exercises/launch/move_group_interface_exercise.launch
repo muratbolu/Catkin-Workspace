@@ -1,0 +1,11 @@
+
+<launch>
+
+    <node name="move_group_interface_exercise"
+          pkg="moveit_exercises"
+          type="move_group_interface_exercise"
+          respawn="false"
+          output="screen">
+    </node>
+
+</launch>

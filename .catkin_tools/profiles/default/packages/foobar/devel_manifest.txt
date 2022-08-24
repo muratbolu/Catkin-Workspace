@@ -1,5 +1,0 @@
-foobar
-/home/muratbolu/catkin_ws/devel/.private/foobar/cmake.lock /home/muratbolu/catkin_ws/devel/./cmake.lock
-/home/muratbolu/catkin_ws/devel/.private/foobar/share/foobar/cmake/foobarConfig.cmake /home/muratbolu/catkin_ws/devel/share/foobar/cmake/foobarConfig.cmake
-/home/muratbolu/catkin_ws/devel/.private/foobar/share/foobar/cmake/foobarConfig-version.cmake /home/muratbolu/catkin_ws/devel/share/foobar/cmake/foobarConfig-version.cmake
-/home/muratbolu/catkin_ws/devel/.private/foobar/lib/pkgconfig/foobar.pc /home/muratbolu/catkin_ws/devel/lib/pkgconfig/foobar.pc

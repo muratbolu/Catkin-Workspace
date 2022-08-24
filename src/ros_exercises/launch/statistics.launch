@@ -1,0 +1,5 @@
+<launch>
+    <node name="server" pkg="ros_exercises" type="statistics_server" output="screen" />
+    <node name="client" pkg="ros_exercises" type="statistics_client" output="screen" />
+    <rosparam command="load" file="$(find ros_exercises)/cfg/example.yaml" />
+</launch>

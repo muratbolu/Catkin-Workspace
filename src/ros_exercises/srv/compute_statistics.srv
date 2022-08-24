@@ -1,0 +1,5 @@
+float32[] input
+---
+float32 median
+float32 mode
+float32 mean

@@ -1,1 +1,0 @@
-/home/muratbolu/catkin_ws/devel/.private/beginner_tutorials/share/roseus/ros/beginner_tutorials/srv/AddTwoInts.l

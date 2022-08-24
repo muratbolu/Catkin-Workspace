@@ -1,1 +1,0 @@
-/home/muratbolu/catkin_ws/devel/.private/moveit_exercises/share/moveit_exercises/cmake/moveit_exercisesConfig.cmake

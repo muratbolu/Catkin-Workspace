@@ -1,1 +1,0 @@
-/home/muratbolu/catkin_ws/devel/.private/ros_exercises/share/common-lisp/ros/ros_exercises/srv/find_min_array.lisp

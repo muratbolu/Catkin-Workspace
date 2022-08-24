@@ -1,8 +1,0 @@
-prefix=/home/muratbolu/catkin_ws/devel/.private/foobar
-
-Name: foobar
-Description: Description of foobar
-Version: 1.2.4
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

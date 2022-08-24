@@ -1,8 +1,0 @@
-[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/statistics_client.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
-[01m[K/home/muratbolu/catkin_ws/src/ros_exercises/src/statistics_client.cpp:14:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kros_exercises::compute_statistics::Request[m[K’ {aka ‘[01m[Kstruct ros_exercises::compute_statisticsRequest_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kdata[m[K’
-   14 |         for (int i = 0; i < input.size(); i++) srv.request.[01;31m[Kdata[m[K.push_back(input[i]);
-      |                                                            [01;31m[K^~~~[m[K
-make[2]: *** [CMakeFiles/statistics_client.dir/build.make:63: CMakeFiles/statistics_client.dir/src/statistics_client.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:556: CMakeFiles/statistics_client.dir/all] Error 2
-make[1]: *** Waiting for unfinished jobs....
-make: *** [Makefile:141: all] Error 2

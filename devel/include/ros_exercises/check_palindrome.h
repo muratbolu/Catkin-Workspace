@@ -1,1 +1,0 @@
-/home/muratbolu/catkin_ws/devel/.private/ros_exercises/include/ros_exercises/check_palindrome.h

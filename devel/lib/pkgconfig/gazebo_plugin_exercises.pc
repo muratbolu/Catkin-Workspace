@@ -1,1 +1,0 @@
-/home/muratbolu/catkin_ws/devel/.private/gazebo_plugin_exercises/lib/pkgconfig/gazebo_plugin_exercises.pc

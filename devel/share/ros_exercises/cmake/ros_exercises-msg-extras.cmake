@@ -1,1 +1,0 @@
-/home/muratbolu/catkin_ws/devel/.private/ros_exercises/share/ros_exercises/cmake/ros_exercises-msg-extras.cmake

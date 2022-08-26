@@ -47,9 +47,13 @@ target_link_libraries(move_group_interface_exercise ${catkin_LIBRARIES} ${Boost_
 add_executable(robot_model_and_robot_state_exercise src/robot_model_and_robot_state_exercise.cpp)
 target_link_libraries(robot_model_and_robot_state_exercise ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
+add_executable(planning_scene_exercise src/planning_scene_exercise.cpp)
+target_link_libraries(planning_scene_exercise ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
 install(
     TARGETS move_group_interface_exercise
             robot_model_and_robot_state_exercise
+            planning_scene_exercise
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

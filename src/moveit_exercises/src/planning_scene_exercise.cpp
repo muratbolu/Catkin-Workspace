@@ -7,6 +7,8 @@
 
 #include <moveit_visual_tools/moveit_visual_tools.h>
 
+#include <eigen_conversions/eigen_msg.h>
+
 bool stateFeasibilityTestExample(const moveit::core::RobotState& kinematic_state, bool /*verbose*/) {
   const double* joint_values = kinematic_state.getJointPositions("panda_joint1");
   return (joint_values[0] > 0.0);
@@ -129,6 +131,21 @@ int main(int argc, char** argv) {
     kinematic_constraints::ConstraintEvaluationResult constraint_eval_result =
         kinematic_constraint_set.decide(copied_state);
     ROS_INFO_STREAM("Test 10: Random state is " << (constraint_eval_result.satisfied ? "constrained" : "not constrained"));
+    
+    current_state.update();
+    Eigen::Isometry3d transform = current_state.getFrameTransform(end_effector_name);
+    tf::poseEigenToMsg(transform, desired_pose.pose);
+    desired_pose.header.frame_id = kinematic_model->getRootLink()->getName();
+    moveit_msgs::Constraints goal_constraint_2 =
+        kinematic_constraints::constructGoalConstraints(end_effector_name, desired_pose);
+    bool constrained_3 = planning_scene.isStateConstrained(current_state, goal_constraint_2, true);
+    ROS_INFO_STREAM("Test 10.5: Current state is " << (constrained_3 ? "constrained" : "not constrained"));
+
+    /*bool result = copied_state.setFromIK(joint_model_group, desired_pose.pose);
+    copied_state.update();
+    kinematic_constraints::ConstraintEvaluationResult constraint_eval_result_2 =
+        kinematic_constraint_set.decide(copied_state);
+    ROS_INFO_STREAM("Test 10.5: IK " << (result ? "was" : "was not") << " successful");*/
 
     // User-defined constraints
     planning_scene.setStateFeasibilityPredicate(stateFeasibilityTestExample);

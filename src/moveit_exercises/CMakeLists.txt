@@ -53,11 +53,15 @@ target_link_libraries(planning_scene_exercise ${catkin_LIBRARIES} ${Boost_LIBRAR
 add_executable(planning_scene_ros_api_exercise src/planning_scene_ros_api_exercise.cpp)
 target_link_libraries(planning_scene_ros_api_exercise ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
+add_executable(motion_planning_pipeline_exercise src/motion_planning_pipeline_exercise.cpp)
+target_link_libraries(motion_planning_pipeline_exercise ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
 install(
     TARGETS move_group_interface_exercise
             robot_model_and_robot_state_exercise
             planning_scene_exercise
             planning_scene_ros_api_exercise
+            motion_planning_pipeline_exercise
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

@@ -46,34 +46,13 @@ int main(int argc, char** argv) {
     collision_detection::CollisionResult collision_result;
     collision_request.contacts = true;
     planning_scene.checkSelfCollision(collision_request, collision_result);
-    // It seems that collision result is always true,
-    // even when the robot doesn't seem to colliding as seen in the GUI.
     ROS_INFO_STREAM("Test 1: Current state is " << (collision_result.collision ? "in" : "not in") << " self collision");
 
     moveit::core::RobotState& current_state = planning_scene.getCurrentStateNonConst();
     current_state.setToRandomPositions();
-    /*
-    std::vector<double> vec{-1.268823913199546,
-                            -0.9590819640529771,
-                             0.6827418626133845,
-                            -2.2336865578763287,
-                            -2.592157593833337,
-                             1.7185699752674297,
-                             0.7420079839126124};
-    */
-    //ROS_INFO_STREAM(printer(current_state.getVariableNames()));
-    //current_state.setVariablePositions(vec);
-    //current_state.update();
     collision_result.clear();
     planning_scene.checkSelfCollision(collision_request, collision_result);
-    //if (collision_result.collision) {
-    //    ROS_INFO_STREAM(collision_result.contacts.size());
-    //}
-    //collision_result.print();
     ROS_INFO_STREAM("Test 2: Current state is " << (collision_result.collision ? "in" : "not in") << " self collision");
-    //ros::Duration (5.0).sleep();
-    //visual_tools.checkAndPublishCollision(current_state, &planning_scene);
-    //visual_tools.trigger();
 
     collision_request.group_name = "hand";
     current_state.setToRandomPositions();
@@ -140,12 +119,6 @@ int main(int argc, char** argv) {
         kinematic_constraints::constructGoalConstraints(end_effector_name, desired_pose);
     bool constrained_3 = planning_scene.isStateConstrained(current_state, goal_constraint_2, true);
     ROS_INFO_STREAM("Test 10.5: Current state is " << (constrained_3 ? "constrained" : "not constrained"));
-
-    /*bool result = copied_state.setFromIK(joint_model_group, desired_pose.pose);
-    copied_state.update();
-    kinematic_constraints::ConstraintEvaluationResult constraint_eval_result_2 =
-        kinematic_constraint_set.decide(copied_state);
-    ROS_INFO_STREAM("Test 10.5: IK " << (result ? "was" : "was not") << " successful");*/
 
     // User-defined constraints
     planning_scene.setStateFeasibilityPredicate(stateFeasibilityTestExample);

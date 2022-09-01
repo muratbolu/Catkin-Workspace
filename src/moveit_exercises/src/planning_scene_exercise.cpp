@@ -111,6 +111,7 @@ int main(int argc, char** argv) {
         kinematic_constraint_set.decide(copied_state);
     ROS_INFO_STREAM("Test 10: Random state is " << (constraint_eval_result.satisfied ? "constrained" : "not constrained"));
     
+    current_state.setJointGroupPositions(joint_model_group, joint_values);
     current_state.update();
     Eigen::Isometry3d transform = current_state.getFrameTransform(end_effector_name);
     tf::poseEigenToMsg(transform, desired_pose.pose);

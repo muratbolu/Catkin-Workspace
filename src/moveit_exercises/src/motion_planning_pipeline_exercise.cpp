@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     planning_pipeline::PlanningPipelinePtr planning_pipeline(
         new planning_pipeline::PlanningPipeline(
             robot_model, node_handle, "planning_plugin", "request_adapters"));
-    
+
     namespace rvt = rviz_visual_tools;
     moveit_visual_tools::MoveItVisualTools visual_tools("panda_link0");
     visual_tools.deleteAllMarkers();
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
     visual_tools.trigger();
     visual_tools.prompt(
         "Press 'next' in the RvizVisualToolsGui window to start the demo");
-    
+
     planning_interface::MotionPlanRequest req;
     planning_interface::MotionPlanResponse res;
     geometry_msgs::PoseStamped pose;
@@ -62,15 +62,15 @@ int main(int argc, char** argv) {
         kinematic_constraints::constructGoalConstraints(
             "panda_link8", pose, tolerance_pose, tolerance_angle);
     req.goal_constraints.push_back(pose_goal);
-    /*{
+    {
     planning_scene_monitor::LockedPlanningSceneRO lscene(psm);
     planning_pipeline->generatePlan(lscene, req, res);
-    }*/
+    }
     if (res.error_code_.val != res.error_code_.SUCCESS) {
         ROS_ERROR("Could not compute plan successfully");
         return 0;
     }
-    
+
     visual_tools.prompt(
         "Press 'next' in the RvizVisualToolsGui window to finish the demo");
 

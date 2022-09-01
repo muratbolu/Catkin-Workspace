@@ -59,13 +59,6 @@ int main(int argc, char** argv) {
     srv.request.scene = planning_scene;
     planning_scene_diff_client.call(srv);
 
-    moveit_msgs::CollisionObject remove_object;
-    remove_object.id = "box";
-    remove_object.header.frame_id = "panda_hand";
-    remove_object.operation = remove_object.REMOVE;
-    ROS_INFO("Attaching the object to the hand and removing it from the world.");
-    planning_scene.world.collision_objects.clear();
-    planning_scene.world.collision_objects.push_back(remove_object);
     planning_scene.robot_state.attached_collision_objects.push_back(attached_object);
     planning_scene.robot_state.is_diff = true;
     planning_scene_diff_publisher.publish(planning_scene);
@@ -87,8 +80,6 @@ int main(int argc, char** argv) {
 
     ROS_INFO("Removing the object from the world.");
     planning_scene.robot_state.attached_collision_objects.clear();
-    planning_scene.world.collision_objects.clear();
-    planning_scene.world.collision_objects.push_back(remove_object);
     planning_scene_diff_publisher.publish(planning_scene);
 
     visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to end the demo");

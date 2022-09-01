@@ -41,6 +41,8 @@ int main(int argc, char** argv) {
     const moveit::core::RobotModelPtr& kinematic_model = robot_model_loader.getModel();
     planning_scene::PlanningScene planning_scene(kinematic_model);
 
+    /*
+
     // Collision checking
     collision_detection::CollisionRequest collision_request;
     collision_detection::CollisionResult collision_result;
@@ -111,15 +113,30 @@ int main(int argc, char** argv) {
         kinematic_constraint_set.decide(copied_state);
     ROS_INFO_STREAM("Test 10: Random state is " << (constraint_eval_result.satisfied ? "constrained" : "not constrained"));
     
+    */
+    
+    moveit::core::RobotState& current_state =
+        planning_scene.getCurrentStateNonConst();
+    const moveit::core::JointModelGroup* joint_model_group =
+        current_state.getJointModelGroup("panda_arm");
+    std::vector<double> joint_values = {0.0, 0.0, 0.0, -2.9, 0.0, 1.4, 0.0};
     current_state.setJointGroupPositions(joint_model_group, joint_values);
     current_state.update();
-    Eigen::Isometry3d transform = current_state.getFrameTransform(end_effector_name);
+    Eigen::Isometry3d transform = current_state.getFrameTransform(
+        (joint_model_group->getLinkModelNames()).back());
+    geometry_msgs::PoseStamped desired_pose;
     tf::poseEigenToMsg(transform, desired_pose.pose);
     desired_pose.header.frame_id = kinematic_model->getRootLink()->getName();
     moveit_msgs::Constraints goal_constraint_2 =
-        kinematic_constraints::constructGoalConstraints(end_effector_name, desired_pose);
-    bool constrained_3 = planning_scene.isStateConstrained(current_state, goal_constraint_2, true);
-    ROS_INFO_STREAM("Test 10.5: Current state is " << (constrained_3 ? "constrained" : "not constrained"));
+        kinematic_constraints::constructGoalConstraints(
+            joint_model_group->getLinkModelNames().back(), desired_pose);
+    current_state.update();
+    bool constrained_3 = planning_scene.isStateConstrained(
+        current_state, goal_constraint_2, true);
+    ROS_INFO_STREAM("Test 10.5: Current state is " <<
+                    (constrained_3 ? "constrained" : "not constrained"));
+
+    /*
 
     // User-defined constraints
     planning_scene.setStateFeasibilityPredicate(stateFeasibilityTestExample);
@@ -127,6 +144,8 @@ int main(int argc, char** argv) {
     ROS_INFO_STREAM("Test 11: Random state is " << (state_feasible ? "feasible" : "not feasible"));
     bool state_valid = planning_scene.isStateValid(copied_state, kinematic_constraint_set, "panda_arm");
     ROS_INFO_STREAM("Test 12: Random state is " << (state_valid ? "valid" : "not valid"));
+
+    */
 
     ros::shutdown();
     return 0;

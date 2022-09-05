@@ -35,8 +35,8 @@ int main(int argc, char** argv) {
     visual_tools.loadRobotStatePub("my_robot_state", true);
     visual_tools.enableBatchPublishing();
     visual_tools.deleteAllMarkers();
-    visual_tools.trigger();
     visual_tools.loadRemoteControl();
+    visual_tools.trigger();
 
     robot_model_loader::RobotModelLoader robot_model_loader("robot_description");
     const moveit::core::RobotModelPtr& kinematic_model = robot_model_loader.getModel();
@@ -46,37 +46,11 @@ int main(int argc, char** argv) {
 
     const std::string end_effector_name = joint_model_group->getLinkModelNames().back();
     const std::string inertial_frame = kinematic_model->getModelFrame();
-    //const std::vector<std::string> variable_names = kinematic_model->getVariableNames();
-    //ROS_INFO_STREAM("Variable Names: " << ToString(variable_names));
 
-    //std::vector<std::string> translational_joint_names =
-    //    {"virtual_joint/trans_x", "virtual_joint/trans_y", "virtual_joint/trans_z"};
-    //std::vector<double> translational_joint_values = {0.5, 0.0, 0.0};
-    //current_state.setVariablePositions(translational_joint_names, translational_joint_values);
-    //current_state.update();
-    Eigen::Isometry3d model_T_endeffector = current_state.getFrameTransform(end_effector_name);
-    //ROS_INFO_STREAM(inertial_frame << "_T_" << end_effector_name << ": \n" << model_T_endeffector.matrix());
-    geometry_msgs::PoseStamped desired_pose;
-    tf::poseEigenToMsg(model_T_endeffector, desired_pose.pose);
-    desired_pose.header.frame_id = inertial_frame;
-    moveit_msgs::Constraints goal_constraint =
-        kinematic_constraints::constructGoalConstraints(end_effector_name, desired_pose);
-    current_state.update();
-    bool constrained = planning_scene.isStateConstrained(current_state, goal_constraint);
-    ROS_INFO_STREAM("Current state is " << (constrained ? "" : "not ") << "constrained");
-
-    visual_tools.publishRobotState(current_state);
-    visual_tools.trigger();
-    ros::Duration(1.0).sleep();
-
-    ros::shutdown();
-    return 0;
-
-    /*
-
-    // Collision checking
     collision_detection::CollisionRequest collision_request;
     collision_detection::CollisionResult collision_result;
+
+    // Collision checking
     collision_request.contacts = true;
     planning_scene.checkSelfCollision(collision_request, collision_result);
     ROS_INFO_STREAM("Test 1: Current state is " <<
@@ -107,8 +81,10 @@ int main(int argc, char** argv) {
     ROS_INFO_STREAM("Test 5: Current state is " <<
         (collision_result.collision ? "in" : "not in") << " self collision");
     collision_detection::CollisionResult::ContactMap::const_iterator it;
-    for (it = collision_result.contacts.begin(); it != collision_result.contacts.end(); ++it) {
-        ROS_INFO("Contact between: %s and %s", it->first.first.c_str(), it->first.second.c_str());
+    for (it = collision_result.contacts.begin(); it != collision_result.contacts.end(); it++) {
+        ROS_INFO_STREAM("Contact between: " << it->first.first.c_str()
+                                            << " and "
+                                            << it->first.second.c_str());
     }
 
     collision_detection::AllowedCollisionMatrix acm = planning_scene.getAllowedCollisionMatrix();
@@ -149,19 +125,31 @@ int main(int argc, char** argv) {
     ROS_INFO_STREAM("Test 10: Random state is " <<
         (constraint_eval_result.satisfied ? "constrained" : "not constrained"));
 
-    current_state.setJointGroupPositions(joint_model_group, joint_values);
+    // Set the current state to random positions but after that, position the model 1.5 units away, 
+    // and make the rotation neutral. The model will have random joint values that may or may not
+    // collide with itself.
+    current_state.setToRandomPositions();
+    std::vector<std::string> translational_joint_names =
+        {"virtual_joint/trans_x", "virtual_joint/trans_y", "virtual_joint/trans_z"};
+    std::vector<double> translational_joint_values = {1.5, 0.0, 0.0};
+    current_state.setVariablePositions(translational_joint_names, translational_joint_values);
+    std::vector<std::string> rotational_joint_names = 
+        {"virtual_joint/rot_x", "virtual_joint/rot_y", "virtual_joint/rot_z", "virtual_joint/rot_w"};
+    std::vector<double> rotational_joint_values = {0.0, 0.0, 0.0, 0.0};
+    current_state.setVariablePositions(rotational_joint_names, rotational_joint_values);
     current_state.update();
-    Eigen::Isometry3d transform = current_state.getFrameTransform(
-        (joint_model_group->getLinkModelNames()).back());
-    tf::poseEigenToMsg(transform, desired_pose.pose);
-    desired_pose.header.frame_id = kinematic_model->getRootLink()->getName();
+
+    Eigen::Isometry3d model_T_endeffector = current_state.getFrameTransform(end_effector_name);
+    tf::poseEigenToMsg(model_T_endeffector, desired_pose.pose);
+    desired_pose.header.frame_id = inertial_frame;
     moveit_msgs::Constraints goal_constraint_2 =
-        kinematic_constraints::constructGoalConstraints(
-            joint_model_group->getLinkModelNames().back(), desired_pose);
+        kinematic_constraints::constructGoalConstraints(end_effector_name, desired_pose);
     current_state.update();
-    bool constrained_3 = planning_scene.isStateConstrained(
-        current_state, goal_constraint_2, true);
-    ROS_INFO_STREAM("Test 11: Current state is " << (constrained_3 ? "constrained" : "not constrained"));
+    bool constrained_3 = planning_scene.isStateConstrained(current_state, goal_constraint_2);
+    ROS_INFO_STREAM("Test 11: This state is " << (constrained_3 ? "" : "not ") << "constrained");
+
+    visual_tools.publishRobotState(current_state);
+    visual_tools.trigger();
 
     // User-defined constraints
     planning_scene.setStateFeasibilityPredicate(stateFeasibilityTestExample);
@@ -169,8 +157,6 @@ int main(int argc, char** argv) {
     ROS_INFO_STREAM("Test 12: Random state is " << (state_feasible ? "feasible" : "not feasible"));
     bool state_valid = planning_scene.isStateValid(copied_state, kinematic_constraint_set, "panda_arm");
     ROS_INFO_STREAM("Test 13: Random state is " << (state_valid ? "valid" : "not valid"));
-
-    */
 
     ros::shutdown();
     return 0;

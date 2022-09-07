@@ -128,6 +128,7 @@ int main(int argc, char** argv) {
     moveit_msgs::RobotTrajectory trajectory;
     const double jump_threshold = 0.0;
     const double eef_step = 0.01;
+    move_group_interface.setStartState(*move_group_interface.getCurrentState());
     double fraction = move_group_interface.computeCartesianPath(waypoints,
                                                                 eef_step,
                                                                 jump_threshold,
@@ -141,7 +142,7 @@ int main(int argc, char** argv) {
     visual_tools.trigger();
     visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
     // Seems to give an error:
-    //move_group_interface.execute(trajectory);
+    move_group_interface.execute(trajectory);
 
     // Obstacle
     move_group_interface.setStartState(*move_group_interface.getCurrentState());

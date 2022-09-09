@@ -1,0 +1,17 @@
+
+<launch>
+
+    <node name="motion_planning_api_exercise"
+          pkg="moveit_exercises"
+          type="motion_planning_api_exercise"
+          respawn="false"
+          output="screen">
+        <rosparam command="load"
+                  file="$(find panda_moveit_config)/config/kinematics.yaml"/>
+        <param name="/planning_plugin"
+               value="ompl_interface/OMPLPlanner"/>
+        <rosparam command="load"
+                  file="$(find panda_moveit_config)/config/ompl_planning.yaml"/>
+    </node>
+
+</launch>

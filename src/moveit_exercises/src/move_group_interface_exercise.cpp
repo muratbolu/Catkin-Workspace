@@ -141,7 +141,6 @@ int main(int argc, char** argv) {
         visual_tools.publishAxisLabeled(waypoints[i], "pt" + std::to_string(i), rvt::SMALL);
     visual_tools.trigger();
     visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
-    // Seems to give an error:
     move_group_interface.execute(trajectory);
 
     // Obstacle

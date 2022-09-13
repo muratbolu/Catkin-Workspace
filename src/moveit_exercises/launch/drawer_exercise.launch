@@ -1,0 +1,11 @@
+
+<launch>
+
+    <node name="drawer_exercise"
+          pkg="moveit_exercises"
+          type="drawer_exercise"
+          respawn="false"
+          output="screen">
+    </node>
+
+</launch>

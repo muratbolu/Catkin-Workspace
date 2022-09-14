@@ -2,6 +2,8 @@
 #include <pluginlib/class_loader.h>
 #include <ros/ros.h>
 
+#include <moveit/move_group_interface/move_group_interface.h>
+#include <moveit/planning_scene_interface/planning_scene_interface.h>
 #include <moveit/robot_model_loader/robot_model_loader.h>
 #include <moveit/planning_interface/planning_interface.h>
 #include <moveit/planning_scene/planning_scene.h>
@@ -98,28 +100,20 @@ int main(int argc, char** argv) {
     visual_tools.loadRobotStatePub("/display_robot_state");
     visual_tools.enableBatchPublishing();
     visual_tools.deleteAllMarkers();
-    visual_tools.trigger();
     visual_tools.loadRemoteControl();
+    visual_tools.trigger();
 
     const std::string PLANNING_GROUP = "panda_arm";
-    robot_model_loader::RobotModelLoader robot_model_loader("robot_description");
-    const moveit::core::RobotModelPtr& robot_model = robot_model_loader.getModel();
-    moveit::core::RobotStatePtr robot_state(new moveit::core::RobotState(robot_model));
-    const moveit::core::JointModelGroup* joint_model_group = robot_state->getJointModelGroup(PLANNING_GROUP);
-    planning_scene::PlanningScenePtr planning_scene(new planning_scene::PlanningScene(robot_model));
-    const std::string inertial_frame = robot_model->getModelFrame();
+    moveit::planning_interface::MoveGroupInterface move_group_interface(PLANNING_GROUP);
+    moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
+    const moveit::core::RobotModelConstPtr& robot_model = move_group_interface.getRobotModel();
+    const moveit::core::JointModelGroup* joint_model_group =
+        move_group_interface.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
+    const std::string inertial_frame = move_group_interface.getRobotModel()->getModelFrame();
 
-    planning_scene->getCurrentStateNonConst().setToDefaultValues(joint_model_group, "ready");
-
-    // Create box object and add it to the planning scene
-    moveit_msgs::CollisionObject box = CreateBox(inertial_frame);
-    planning_scene->processCollisionObjectMsg(box);
-
-    // Create drawer object and add it to the planning scene
-    moveit_msgs::CollisionObject drawer = CreateBox(inertial_frame);
-    planning_scene->processCollisionObjectMsg(drawer);
-
-    visual_tools.publishRobotState(planning_scene->getCurrentStateNonConst(), rviz_visual_tools::GREEN);
+    // Create box and drawer objects and add it to the planning scene
+    std::vector<moveit_msgs::CollisionObject> objects{CreateBox(inertial_frame), CreateDrawer(inertial_frame)};
+    planning_scene_interface.applyCollisionObjects(objects);
     visual_tools.trigger();
 
     visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to plan and execute the trajectory");

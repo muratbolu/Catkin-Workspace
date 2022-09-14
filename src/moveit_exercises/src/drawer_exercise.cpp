@@ -4,15 +4,10 @@
 
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
-#include <moveit/robot_model_loader/robot_model_loader.h>
-#include <moveit/planning_interface/planning_interface.h>
-#include <moveit/planning_scene/planning_scene.h>
-#include <moveit/kinematic_constraints/utils.h>
+#include <moveit/planning_pipeline/planning_pipeline.h>
 #include <moveit_msgs/DisplayTrajectory.h>
 #include <moveit_msgs/PlanningScene.h>
 #include <moveit_visual_tools/moveit_visual_tools.h>
-
-#include <boost/scoped_ptr.hpp>
 
 namespace {
 
@@ -109,6 +104,8 @@ int main(int argc, char** argv) {
     const moveit::core::RobotModelConstPtr& robot_model = move_group_interface.getRobotModel();
     const moveit::core::JointModelGroup* joint_model_group =
         move_group_interface.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
+    planning_pipeline::PlanningPipelinePtr planning_pipeline(new planning_pipeline::PlanningPipeline(
+        robot_model, node, "planning_plugin", "request_adapters"));
     const std::string inertial_frame = move_group_interface.getRobotModel()->getModelFrame();
 
     // Create box and drawer objects and add it to the planning scene
@@ -117,33 +114,6 @@ int main(int argc, char** argv) {
     visual_tools.trigger();
 
     visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to plan and execute the trajectory");
-    boost::scoped_ptr<pluginlib::ClassLoader<planning_interface::PlannerManager>> planner_plugin_loader;
-    planning_interface::PlannerManagerPtr planner_instance;
-    std::string planner_plugin_name;
-
-    if (!node.getParam("planning_plugin", planner_plugin_name)) ROS_FATAL_STREAM("Could not find planner plugin name");
-    try {
-        planner_plugin_loader.reset(new pluginlib::ClassLoader<planning_interface::PlannerManager>(
-            "moveit_core", "planning_interface::PlannerManager"));
-    }
-    catch (pluginlib::PluginlibException& ex) {
-        ROS_FATAL_STREAM("Exception while creating planning plugin loader " << ex.what());
-    }
-
-    try {
-        planner_instance.reset(planner_plugin_loader->createUnmanagedInstance(planner_plugin_name));
-        if (!planner_instance->initialize(robot_model, node.getNamespace()))
-            ROS_FATAL_STREAM("Could not initialize planner instance");
-        ROS_INFO_STREAM("Using planning interface '" << planner_instance->getDescription() << "'");
-    }
-    catch (pluginlib::PluginlibException& ex) {
-        const std::vector<std::string>& classes = planner_plugin_loader->getDeclaredClasses();
-        std::stringstream ss;
-        for (const auto& cls : classes) ss << cls << " ";
-        ROS_ERROR_STREAM("Exception while loading planner '" << planner_plugin_name << "': "
-                                                             << ex.what() << std::endl
-                                                             << "Available plugins: " << ss.str());
-    }
 
     ros::shutdown();
     return 0;

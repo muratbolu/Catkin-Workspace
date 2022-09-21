@@ -11,6 +11,9 @@
 #include <moveit_msgs/PlanningScene.h>
 #include <moveit_visual_tools/moveit_visual_tools.h>
 
+#include <Eigen/Core>
+#include <eigen_conversions/eigen_msg.h>
+
 namespace {
 
     moveit_msgs::CollisionObject CreateBox(std::string inertial_frame,
@@ -133,13 +136,9 @@ int main(int argc, char** argv) {
     pose.pose.position.x = 0.0;
     pose.pose.position.y = 0.5;
     pose.pose.position.z = 0.15;
-    std::vector<double> quat{0.92, 0.38, 0.0, 0.0};
-    double length = sqrt(quat[0]*quat[0] + quat[1]*quat[1] + quat[2]*quat[2] + quat[3]*quat[3]);
-    for (int i = 0; i < 4; i++) quat[i] /= length;
-    pose.pose.orientation.x = quat[0];
-    pose.pose.orientation.y = quat[1];
-    pose.pose.orientation.z = quat[2];
-    pose.pose.orientation.w = quat[3];
+    Eigen::Quaterniond quat(0.0, 0.92, 0.38, 0.0);
+    quat.normalize();
+    tf::quaternionEigenToMsg(quat, pose.pose.orientation);
     
     std::vector<double> tolerance_pose(3, 0.01);
     std::vector<double> tolerance_angle(3, 0.01);
@@ -167,13 +166,9 @@ int main(int argc, char** argv) {
     pose.pose.position.x = 0.35;
     pose.pose.position.y = 0.0;
     pose.pose.position.z = 0.5;
-    quat = std::vector<double>{0.65, -0.27, 0.65, -0.27};
-    length = sqrt(quat[0]*quat[0] + quat[1]*quat[1] + quat[2]*quat[2] + quat[3]*quat[3]);
-    for (int i = 0; i < 4; i++) quat[i] /= length;
-    pose.pose.orientation.x = quat[0];
-    pose.pose.orientation.y = quat[1];
-    pose.pose.orientation.z = quat[2];
-    pose.pose.orientation.w = quat[3];
+    quat = Eigen::Quaterniond(-0.27, 0.65, -0.27, 0.65);
+    quat.normalize();
+    tf::quaternionEigenToMsg(quat, pose.pose.orientation);
     
     req.group_name = PLANNING_GROUP;
     pose_goal = kinematic_constraints::constructGoalConstraints(end_effector_name,

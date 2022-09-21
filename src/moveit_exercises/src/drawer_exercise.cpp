@@ -158,8 +158,9 @@ int main(int argc, char** argv) {
     moveit_msgs::MotionPlanResponse response;
     res.getMessage(response);
 
-    move_group_interface.execute(response.trajectory);
-    move_group_interface.attachObject(objects[0].id, "panda_hand");
+    if(move_group_interface.execute(response.trajectory) == true)
+        move_group_interface.attachObject(objects[0].id, "panda_hand");
+    else ROS_ERROR_STREAM("Failed to execute trajectory.");
 
     // Pose goal
     pose.header.frame_id = "panda_link0";
@@ -186,7 +187,8 @@ int main(int argc, char** argv) {
     }
 
     res.getMessage(response);
-    move_group_interface.execute(response.trajectory);
+    if(move_group_interface.execute(response.trajectory) != true)
+        ROS_ERROR_STREAM("Failed to execute trajectory.");
     
     visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to end the exercise");
 

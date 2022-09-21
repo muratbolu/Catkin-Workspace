@@ -166,9 +166,11 @@ int main(int argc, char** argv) {
 
     // Pose goal
     pose.header.frame_id = "panda_link0";
-    pose.pose.position.x = 0.35;
-    pose.pose.position.y = 0.0;
-    pose.pose.position.z = 0.5;
+    pose.pose.position.x = objects[1].primitive_poses[2].position.x
+                           - objects[1].primitives[2].dimensions[0]
+                           + objects[0].primitives[0].dimensions[0] / 2;
+    pose.pose.position.y = objects[1].primitive_poses[4].position.y;
+    pose.pose.position.z = objects[1].primitive_poses[4].position.z;
     quat = Eigen::Quaterniond(-0.27, 0.65, -0.27, 0.65);
     quat.normalize();
     tf::quaternionEigenToMsg(quat, pose.pose.orientation);

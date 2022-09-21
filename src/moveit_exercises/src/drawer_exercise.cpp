@@ -16,6 +16,8 @@
 
 namespace {
 
+    constexpr char* kBoxId = "box";
+
     moveit_msgs::CollisionObject CreateBox(std::string inertial_frame,
                                            double edge_size = 0.075,
                                            std::vector<double> position = {0.0, 0.5, 0.0},
@@ -23,7 +25,7 @@ namespace {
 
         moveit_msgs::CollisionObject box;
         box.header.frame_id = inertial_frame;
-        box.id = "box";
+        box.id = kBoxId;
 
         shape_msgs::SolidPrimitive box_primitive;
         box_primitive.type = box_primitive.BOX;
@@ -159,7 +161,7 @@ int main(int argc, char** argv) {
     res.getMessage(response);
 
     if(move_group_interface.execute(response.trajectory) == true)
-        move_group_interface.attachObject(objects[0].id, "panda_hand");
+        move_group_interface.attachObject(kBoxId, "panda_hand");
     else ROS_ERROR_STREAM("Failed to execute trajectory.");
 
     // Pose goal

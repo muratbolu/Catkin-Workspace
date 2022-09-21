@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
     tf2_ros
     tf2_eigen
     tf2_geometry_msgs
+    eigen_conversions
 )
 
 find_package(Eigen3 REQUIRED)
@@ -59,6 +60,10 @@ target_link_libraries(motion_planning_api_exercise ${catkin_LIBRARIES} ${Boost_L
 add_executable(motion_planning_pipeline_exercise src/motion_planning_pipeline_exercise.cpp)
 target_link_libraries(motion_planning_pipeline_exercise ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
+add_executable(drawer_exercise src/drawer_exercise.cpp)
+target_link_libraries(drawer_exercise ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
+
 install(
     TARGETS move_group_interface_exercise
             robot_model_and_robot_state_exercise
@@ -66,6 +71,7 @@ install(
             planning_scene_ros_api_exercise
             motion_planning_api_exercise
             motion_planning_pipeline_exercise
+            drawer_exercise
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
